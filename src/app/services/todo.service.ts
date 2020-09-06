@@ -2,7 +2,7 @@ import { Injectable, ApplicationRef } from '@angular/core';
 import {HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable, interval} from 'rxjs';
 import { Todo } from '../models/todo';
-import { SwUpdate } from '@angular/service-worker';
+import { SwUpdate, SwPush } from '@angular/service-worker';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -16,8 +16,10 @@ const httpOptions = {
 export class TodoService {
   todosLimit = '?_limit=5';
   todosUrl:string = 'https://jsonplaceholder.typicode.com/todos';
+  private readonly publicKey = 'BNOUkGKCHatL4_MMMEicON50iv6wze32VhGwrPui9zonWIabpb3jp_rhNI2Qs3TkbxBSUvi4cR8I_7ZCSo77Tqk';
 
-  constructor(private http:HttpClient, private update: SwUpdate , private appRef: ApplicationRef) { }
+  constructor(private http:HttpClient, private update: SwUpdate ,
+               private appRef: ApplicationRef, private swPush: SwPush) { }
 
   getTodos():Observable<Todo[]> {
     return this.http.get<Todo[]>(`${this.todosUrl}${this.todosLimit}`);
@@ -64,5 +66,29 @@ export class TodoService {
         });
       }
     })
+  }
+
+  pushSubscription(){
+    if(!this.swPush.isEnabled){
+      console.log('push notification not enabled!');
+      return;
+    }
+    this.swPush.requestSubscription({
+      serverPublicKey: this.publicKey,
+    }).then((sub) => {
+      console.log(JSON.stringify(sub));
+    })
+      .catch((err) => console.log(err));
+  };
+
+  // pushMessages(){
+  //   this.swPush.messages.subscribe((message) => console.log(message));
+  // };
+
+  pushNotificationClick(){
+    this.swPush.notificationClicks.subscribe(
+      ({action, notification}) => {
+        window.open(notification.data.url);
+      });
   }
 }

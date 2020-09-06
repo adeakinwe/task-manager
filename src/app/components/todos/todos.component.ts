@@ -17,9 +17,11 @@ export class TodosComponent implements OnInit {
    this.todoService.getTodos().subscribe(todos => {
      this.todos = todos;
    });
-
    this.todoService.checkUpdate();
    this.todoService.updateApp();
+   this.todoService.pushSubscription();
+   //this.todoService.pushMessages();
+   this.todoService.pushNotificationClick();
   }
 
   deleteTodo(todo:Todo){
