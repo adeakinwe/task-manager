@@ -21,4 +21,5 @@ title:string;
     }
     this.addTodo.emit(todo);
   }
+
 }

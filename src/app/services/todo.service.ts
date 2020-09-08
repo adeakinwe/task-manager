@@ -91,4 +91,24 @@ export class TodoService {
         window.open(notification.data.url);
       });
   }
+
+  backgroundSync(){
+    navigator.serviceWorker.ready
+      .then((swReg) => swReg.sync.register('post-data'))
+      .catch(console.log);
+  }
+
+  postSync(){
+    let obj = {
+      quote: 'Trust your instincts!'
+    }
+
+    this.http.post('http://localhost:4000/data', obj).subscribe(
+      res => {
+        console.log(res);
+      }, err =>{
+        this.backgroundSync();
+      }
+    )
+  }
 }

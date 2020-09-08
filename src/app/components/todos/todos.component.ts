@@ -10,6 +10,7 @@ import { TodoService } from '../../services/todo.service';
 export class TodosComponent implements OnInit {
   title: string = "Todos"
   todos:Todo[];
+  http: any;
 
   constructor(private todoService:TodoService) { }
 
@@ -22,6 +23,8 @@ export class TodosComponent implements OnInit {
    this.todoService.pushSubscription();
    //this.todoService.pushMessages();
    this.todoService.pushNotificationClick();
+  //  this.todoService.postSync();
+  //  this.todoService.backgroundSync();
   }
 
   deleteTodo(todo:Todo){
@@ -37,4 +40,11 @@ export class TodosComponent implements OnInit {
     })
   }
 
+  backgroundSync(){
+    this.todoService.backgroundSync()
+  }
+
+  postSync(){
+    this.todoService.postSync()
+  }
 }
