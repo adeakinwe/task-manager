@@ -3,6 +3,8 @@ import {HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable, interval} from 'rxjs';
 import { Todo } from '../models/todo';
 import { SwUpdate, SwPush } from '@angular/service-worker';
+import { IndexedDBService } from './indexed-db.service';
+
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -19,7 +21,8 @@ export class TodoService {
   private readonly publicKey = 'BNOUkGKCHatL4_MMMEicON50iv6wze32VhGwrPui9zonWIabpb3jp_rhNI2Qs3TkbxBSUvi4cR8I_7ZCSo77Tqk';
 
   constructor(private http:HttpClient, private update: SwUpdate ,
-               private appRef: ApplicationRef, private swPush: SwPush) { }
+               private appRef: ApplicationRef, private swPush: SwPush,
+               private idb: IndexedDBService) { }
 
   getTodos():Observable<Todo[]> {
     return this.http.get<Todo[]>(`${this.todosUrl}${this.todosLimit}`);
@@ -100,14 +103,17 @@ export class TodoService {
 
   postSync(){
     let obj = {
-      quote: 'Trust your instincts!'
+      task: 'Go Shopping!'
     }
 
     this.http.post('http://localhost:4000/data', obj).subscribe(
       res => {
         console.log(res);
       }, err =>{
-        this.backgroundSync();
+        this.idb.addTask(obj.task)
+        .then(this.backgroundSync)
+        .catch(console.log);
+        //this.backgroundSync();
       }
     )
   }
