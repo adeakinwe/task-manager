@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1599775620295,
+  "timestamp": 1599815757449,
   "index": "https://adeakinwe.github.io/task-manager/index.html",
   "assetGroups": [
     {
@@ -17,6 +17,7 @@
         "https://adeakinwe.github.io/task-manager/manifest.webmanifest",
         "https://adeakinwe.github.io/task-manager/polyfills.a4021de53358bb0fec14.js",
         "https://adeakinwe.github.io/task-manager/runtime.e227d1a0e31cbccbf8ec.js",
+        "https://adeakinwe.github.io/task-manager/scripts.d2d522a230ac0f18bf62.js",
         "https://adeakinwe.github.io/task-manager/styles.fd2b94338fb1f66e6be4.css"
       ],
       "patterns": []
@@ -62,11 +63,12 @@
     "https://adeakinwe.github.io/task-manager/fontawesome-webfont.8b43027f47b20503057d.eot": "d980c2ce873dc43af460d4d572d441304499f400",
     "https://adeakinwe.github.io/task-manager/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
     "https://adeakinwe.github.io/task-manager/fontawesome-webfont.f691f37e57f04c152e23.woff": "28b782240b3e76db824e12c02754a9731a167527",
-    "https://adeakinwe.github.io/task-manager/index.html": "143a2e89222f31a3c798bbb5f2a273fa7808eee1",
+    "https://adeakinwe.github.io/task-manager/index.html": "63c9d389487278f70fcfa0f128e8c45dbb2d0cd0",
     "https://adeakinwe.github.io/task-manager/main.e77e0946ffbe5c24cb94.js": "f97c53c5bc4872f0d88ee04975929fc0580377f7",
     "https://adeakinwe.github.io/task-manager/manifest.webmanifest": "e1bf359ee55f59b8fbbcba1b060dd0b224724677",
     "https://adeakinwe.github.io/task-manager/polyfills.a4021de53358bb0fec14.js": "b47435a9ef2a4829f2f9dfd35599bde3614981b1",
     "https://adeakinwe.github.io/task-manager/runtime.e227d1a0e31cbccbf8ec.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://adeakinwe.github.io/task-manager/scripts.d2d522a230ac0f18bf62.js": "a9f4039fc971441c19f5c5445cc591fad4c41396",
     "https://adeakinwe.github.io/task-manager/styles.fd2b94338fb1f66e6be4.css": "8bb4eeb5d384905a39ed21d7984a79f78df22dad"
   },
   "navigationUrls": [
