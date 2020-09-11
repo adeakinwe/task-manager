@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1599817158235,
+  "timestamp": 1599820186615,
   "index": "https://adeakinwe.github.io/task-manager/index.html",
   "assetGroups": [
     {
@@ -63,7 +63,7 @@
     "https://adeakinwe.github.io/task-manager/fontawesome-webfont.8b43027f47b20503057d.eot": "d980c2ce873dc43af460d4d572d441304499f400",
     "https://adeakinwe.github.io/task-manager/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
     "https://adeakinwe.github.io/task-manager/fontawesome-webfont.f691f37e57f04c152e23.woff": "28b782240b3e76db824e12c02754a9731a167527",
-    "https://adeakinwe.github.io/task-manager/index.html": "63c9d389487278f70fcfa0f128e8c45dbb2d0cd0",
+    "https://adeakinwe.github.io/task-manager/index.html": "c7933b813b7dcf928ba3eee2702c25df9bd8d553",
     "https://adeakinwe.github.io/task-manager/main.e77e0946ffbe5c24cb94.js": "f97c53c5bc4872f0d88ee04975929fc0580377f7",
     "https://adeakinwe.github.io/task-manager/manifest.webmanifest": "e1bf359ee55f59b8fbbcba1b060dd0b224724677",
     "https://adeakinwe.github.io/task-manager/polyfills.a4021de53358bb0fec14.js": "b47435a9ef2a4829f2f9dfd35599bde3614981b1",
